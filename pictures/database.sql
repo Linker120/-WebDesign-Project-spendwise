@@ -1,0 +1,16 @@
+CREATE DATABASE IF NOT EXISTS spendwise_db;
+USE spendwise_db;
+
+CREATE TABLE IF NOT EXISTS users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    reset_token VARCHAR(64) DEFAULT NULL,
+    reset_expires DATETIME DEFAULT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    google_id VARCHAR(100) DEFAULT NULL,
+    facebook_id VARCHAR(100) DEFAULT NULL,
+    twitter_id VARCHAR(100) DEFAULT NULL,
+    social_avatar VARCHAR(255) DEFAULT NULL
+); 
